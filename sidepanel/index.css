@@ -1,0 +1,581 @@
+body {
+  background-color: #1a1a1a;
+  color: #e6e6e6;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica,
+    Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+  margin: 0;
+  padding: 0;
+  font-size: 14px;
+  height: 100vh;
+  overflow: hidden;
+}
+
+:root {
+  --copy-icon-url: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M12.668 10.667C12.668 9.95614 12.668 9.46258 12.6367 9.0791C12.6137 8.79732 12.5758 8.60761 12.5244 8.46387L12.4688 8.33399C12.3148 8.03193 12.0803 7.77885 11.793 7.60254L11.666 7.53125C11.508 7.45087 11.2963 7.39395 10.9209 7.36328C10.5374 7.33197 10.0439 7.33203 9.33301 7.33203H6.5C5.78896 7.33203 5.29563 7.33195 4.91211 7.36328C4.63016 7.38632 4.44065 7.42413 4.29688 7.47559L4.16699 7.53125C3.86488 7.68518 3.61186 7.9196 3.43555 8.20703L3.36524 8.33399C3.28478 8.49198 3.22795 8.70352 3.19727 9.0791C3.16595 9.46259 3.16504 9.95611 3.16504 10.667V13.5C3.16504 14.211 3.16593 14.7044 3.19727 15.0879C3.22797 15.4636 3.28473 15.675 3.36524 15.833L3.43555 15.959C3.61186 16.2466 3.86474 16.4807 4.16699 16.6348L4.29688 16.6914C4.44063 16.7428 4.63025 16.7797 4.91211 16.8027C5.29563 16.8341 5.78896 16.835 6.5 16.835H9.33301C10.0439 16.835 10.5374 16.8341 10.9209 16.8027C11.2965 16.772 11.508 16.7152 11.666 16.6348L11.793 16.5645C12.0804 16.3881 12.3148 16.1351 12.4688 15.833L12.5244 15.7031C12.5759 15.5594 12.6137 15.3698 12.6367 15.0879C12.6681 14.7044 12.668 14.211 12.668 13.5V10.667ZM13.998 12.665C14.4528 12.6634 14.8011 12.6602 15.0879 12.6367C15.4635 12.606 15.675 12.5492 15.833 12.4688L15.959 12.3975C16.2466 12.2211 16.4808 11.9682 16.6348 11.666L16.6914 11.5361C16.7428 11.3924 16.7797 11.2026 16.8027 10.9209C16.8341 10.5374 16.835 10.0439 16.835 9.33301V6.5C16.835 5.78896 16.8341 5.29563 16.8027 4.91211C16.7797 4.63025 16.7428 4.44063 16.6914 4.29688L16.6348 4.16699C16.4807 3.86474 16.2466 3.61186 15.959 3.43555L15.833 3.36524C15.675 3.28473 15.4636 3.22797 15.0879 3.19727C14.7044 3.16593 14.211 3.16504 13.5 3.16504H10.667C9.9561 3.16504 9.46259 3.16595 9.0791 3.19727C8.79739 3.22028 8.6076 3.2572 8.46387 3.30859L8.33399 3.36524C8.03176 3.51923 7.77886 3.75343 7.60254 4.04102L7.53125 4.16699C7.4508 4.32498 7.39397 4.53655 7.36328 4.91211C7.33985 5.19893 7.33562 5.54719 7.33399 6.00195H9.33301C10.022 6.00195 10.5791 6.00131 11.0293 6.03809C11.4873 6.07551 11.8937 6.15471 12.2705 6.34668L12.4883 6.46875C12.984 6.7728 13.3878 7.20854 13.6533 7.72949L13.7197 7.87207C13.8642 8.20859 13.9292 8.56974 13.9619 8.9707C13.9987 9.42092 13.998 9.97799 13.998 10.667V12.665ZM18.165 9.33301C18.165 10.022 18.1657 10.5791 18.1289 11.0293C18.0961 11.4302 18.0311 11.7914 17.8867 12.1279L17.8203 12.2705C17.5549 12.7914 17.1509 13.2272 16.6553 13.5313L16.4365 13.6533C16.0599 13.8452 15.6541 13.9245 15.1963 13.9619C14.8593 13.9895 14.4624 13.9935 13.9951 13.9951C13.9935 14.4624 13.9895 14.8593 13.9619 15.1963C13.9292 15.597 13.864 15.9576 13.7197 16.2939L13.6533 16.4365C13.3878 16.9576 12.9841 17.3941 12.4883 17.6982L12.2705 17.8203C11.8937 18.0123 11.4873 18.0915 11.0293 18.1289C10.5791 18.1657 10.022 18.165 9.33301 18.165H6.5C5.81091 18.165 5.25395 18.1657 4.80371 18.1289C4.40306 18.0962 4.04235 18.031 3.70606 17.8867L3.56348 17.8203C3.04244 17.5548 2.60585 17.151 2.30176 16.6553L2.17969 16.4365C1.98788 16.0599 1.90851 15.6541 1.87109 15.1963C1.83431 14.746 1.83496 14.1891 1.83496 13.5V10.667C1.83496 9.978 1.83432 9.42091 1.87109 8.9707C1.90851 8.5127 1.98772 8.10625 2.17969 7.72949L2.30176 7.51172C2.60586 7.0159 3.04236 6.6122 3.56348 6.34668L3.70606 6.28027C4.04237 6.136 4.40303 6.07083 4.80371 6.03809C5.14051 6.01057 5.53708 6.00551 6.00391 6.00391C6.00551 5.53708 6.01057 5.14051 6.03809 4.80371C6.0755 4.34588 6.15483 3.94012 6.34668 3.56348L6.46875 3.34473C6.77282 2.84912 7.20856 2.44514 7.72949 2.17969L7.87207 2.11328C8.20855 1.96886 8.56979 1.90385 8.9707 1.87109C9.42091 1.83432 9.978 1.83496 10.667 1.83496H13.5C14.1891 1.83496 14.746 1.83431 15.1963 1.87109C15.6541 1.90851 16.0599 1.98788 16.4365 2.17969L16.6553 2.30176C17.151 2.60585 17.5548 3.04244 17.8203 3.56348L17.8867 3.70606C18.031 4.04235 18.0962 4.40306 18.1289 4.80371C18.1657 5.25395 18.165 5.81091 18.165 6.5V9.33301Z"/></svg>');
+  --star-icon-url: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>');
+  --check-icon-url: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M3 11 L8 19 L17 5" stroke="black" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>');
+  --new-topic-icon-url: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M10 4C8.13623 4 7.20435 4 6.46927 4.30448C5.48915 4.71046 4.71046 5.48915 4.30448 6.46927C4 7.20435 4 8.13623 4 10V13.6C4 15.8402 4 16.9603 4.43597 17.816C4.81947 18.5686 5.43139 19.1805 6.18404 19.564C7.03968 20 8.15979 20 10.4 20H14C15.8638 20 16.7956 20 17.5307 19.6955C18.5108 19.2895 19.2895 18.5108 19.6955 17.5307C20 16.7956 20 15.8638 20 14" stroke="currentColor" stroke-width="2" stroke-linecap="square"/><path d="M12.4393 14.5607L19.5 7.5C20.3284 6.67157 20.3284 5.32843 19.5 4.5C18.6716 3.67157 17.3284 3.67157 16.5 4.5L9.43934 11.5607C9.15804 11.842 9 12.2235 9 12.6213V15H11.3787C11.7765 15 12.158 14.842 12.4393 14.5607Z" stroke="currentColor" stroke-width="2" stroke-linecap="square"/></svg>');
+}
+
+input,
+button,
+textarea,
+select {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+.chat-root {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 72px; /* space for input bar */
+  padding: 0 12px 12px; /* remove top padding so banner sits flush */
+  overflow-y: auto;
+}
+
+/* Current domain banner */
+.domain-banner {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  font-size: 13px;
+  color: #aaa;
+  padding: 8px 6px;
+  margin-bottom: 8px;
+  border-bottom: 1px solid #333;
+  background: linear-gradient(to bottom, rgba(28,28,28,1), rgba(28,28,28,0.6));
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.domain-banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.domain-banner #domain-text {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: #cce;
+}
+
+/* New topic action button (icon only) */
+.domain-banner .domain-action {
+  background: #1f1f1f;
+  color: #ddd;
+  border: 1px solid #3a3a3a;
+  border-radius: 10px;
+  cursor: pointer;
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.domain-banner .domain-action::before {
+  content: "";
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  background-color: currentColor;
+  -webkit-mask-image: var(--new-topic-icon-url);
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-size: 18px 18px;
+  -webkit-mask-position: center;
+  mask-image: var(--new-topic-icon-url);
+  mask-repeat: no-repeat;
+  mask-size: 18px 18px;
+  mask-position: center;
+}
+
+.domain-banner .domain-action:hover {
+  background: #343434;
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #bbb;
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+.controls input[type='range'] {
+  flex: 1;
+  accent-color: #888;
+}
+
+.chat-output {
+  white-space: pre-wrap;
+  line-height: 1.5;
+}
+[hidden] { display: none; }
+
+/* Align loading indicator with message bubble padding */
+#loading {
+  margin: 8px 0;        /* same vertical rhythm as .message */
+  padding: 10px 12px;   /* same inner padding as .bubble */
+}
+
+/* Chat message bubbles */
+.message {
+  display: flex;
+  margin: 8px 0;
+}
+
+.message.user { justify-content: flex-end; }
+.message.assistant {
+  justify-content: flex-start;
+  flex-direction: column; /* stack bubble and actions */
+  align-items: flex-start;
+}
+
+.message .bubble {
+  max-width: 80%;
+  padding: 10px 12px;
+  border-radius: 12px;
+  background: #2a2a2a; /* subtle contrast but close to base */
+  color: #e6e6e6;
+  /* Reset inherited pre-wrap so Markdown blocks don't double-space */
+  white-space: normal;
+}
+
+.message.user .bubble {
+  background: #2a2a2a;
+  /* Preserve user-entered line breaks only for user messages */
+  white-space: pre-wrap;
+}
+
+.message.assistant .bubble {
+  background: transparent;
+  max-width: 100%;
+  line-height: 1.45; /* slightly tighter than container */
+}
+
+/* Row for message actions (e.g., copy) */
+.message.assistant .actions {
+  display: flex;
+  gap: 6px;
+  margin-top: 0;            /* no extra space after bubble */
+  margin-left: 10px;        /* align with bubble's left padding */
+}
+
+.message.assistant .actions .copy-btn {
+  border: none;            /* no border */
+  background: transparent; /* only background on hover */
+  color: #999;             /* slightly darker icon color via currentColor */
+  border-radius: 8px;
+  padding: 4px;
+  cursor: pointer;
+  line-height: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 120ms ease, color 120ms ease;
+  width: 28px;
+  height: 28px;
+  position: relative;
+}
+.message.assistant .actions .star-btn {
+  border: none;
+  background: transparent;
+  color: #999;             /* slightly darker icon color */
+  border-radius: 8px;
+  padding: 4px;
+  cursor: pointer;
+  line-height: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 120ms ease, color 120ms ease;
+  width: 28px;
+  height: 28px;
+  position: relative;
+}
+.message.assistant .actions .star-btn:hover {
+  color: #cfcfcf;           /* brighten icon/text */
+  background-color: transparent; /* no hover background */
+}
+.message.assistant .actions .star-btn:active { background-color: #343434; }
+
+/* Star icon */
+.message.assistant .actions .star-btn::before {
+  content: "";
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-color: currentColor;
+  -webkit-mask-image: var(--star-icon-url);
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-size: 20px 20px;
+  -webkit-mask-position: center;
+  mask-image: var(--star-icon-url);
+  mask-repeat: no-repeat;
+  mask-size: 20px 20px;
+  mask-position: center;
+}
+
+/* Starred state */
+.message.assistant .actions .star-btn.starred {
+  color: #ffd76a;
+  background-color: #2a240f;
+}
+
+/* Banner star button */
+.domain-banner .domain-star {
+  border: none;
+  background: transparent;
+  color: #999;
+  border-radius: 8px;
+  padding: 4px;
+  cursor: pointer;
+  line-height: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 120ms ease, color 120ms ease;
+  width: 26px;
+  height: 26px;
+}
+.domain-banner .domain-star:hover { color: #cfcfcf; }
+.domain-banner .domain-star:active { background: #343434; }
+.domain-banner .domain-star::before {
+  content: "";
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-color: currentColor;
+  -webkit-mask-image: var(--star-icon-url);
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-size: 20px 20px;
+  -webkit-mask-position: center;
+  mask-image: var(--star-icon-url);
+  mask-repeat: no-repeat;
+  mask-size: 20px 20px;
+  mask-position: center;
+}
+.domain-banner .domain-star.starred { color: #ffd76a; background: #2a240f; }
+
+.message.assistant .actions .copy-btn:hover {
+  color: #cfcfcf;           /* brighten icon/text via currentColor */
+  background-color: transparent; /* no hover background */
+}
+
+.message.assistant .actions .copy-btn:active {
+  background-color: #343434;
+}
+
+/* Icon drawn by pseudo-element so hover background doesn't affect icon color */
+.message.assistant .actions .copy-btn::before {
+  content: "";
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  background-color: currentColor;
+  -webkit-mask-image: var(--copy-icon-url);
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-size: 18px 18px;
+  -webkit-mask-position: center;
+  mask-image: var(--copy-icon-url);
+  mask-repeat: no-repeat;
+  mask-size: 18px 18px;
+  mask-position: center;
+}
+
+.message.assistant .actions .copy-btn.copied::before {
+  -webkit-mask-image: var(--check-icon-url);
+  mask-image: var(--check-icon-url);
+}
+
+/* Optional visual feedback when copied */
+.message.assistant .actions .copy-btn.copied {
+  color: #9fe29f;
+  background-color: transparent; /* no bg change on copied */
+  font-weight: 600; /* subtle emphasis when copied */
+}
+
+/* Origin link button (to page where question was asked) */
+.message.assistant .actions .origin-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 28px;               /* match buttons */
+  padding: 0 8px;
+  font-size: 12px;            /* small font */
+  color: #cfcfcf;
+  text-decoration: none;
+  border: 1px solid #3a3a3a;  /* rectangular border */
+  border-radius: 8px;         /* same rounding as buttons */
+  background: transparent;    /* clear background */
+  max-width: 360px;           /* avoid overly long buttons */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.message.assistant .actions .origin-link:hover {
+  color: #ffffff;
+  border-color: #505050;
+  background: #343434;
+}
+.message.assistant .actions .origin-link:active {
+  color: #aaf;
+  background: #343434;
+}
+
+/* Remove bottom margin for the last Markdown element in assistant bubble */
+.message.assistant .bubble > :last-child {
+  margin-bottom: 0 !important;
+}
+
+/* Code blocks: keep preformatted and allow horizontal scroll */
+.message.assistant .bubble pre {
+  white-space: pre;
+  overflow-x: auto;
+  background: #0f1115;         /* near-black code background */
+  color: #e6e6e6;
+  border: 1px solid #262a33;   /* subtle contrast border */
+  border-radius: 10px;
+  padding: 38px 12px 12px;     /* extra top space for taller full-width badge */
+  margin: 8px 0;               /* consistent spacing */
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+    "Liberation Mono", "Courier New", monospace;
+  font-size: 13px;
+  line-height: 1.5;
+  position: relative;          /* anchor badge */
+}
+
+/* Language badge at top-left of code blocks */
+.message.assistant .bubble pre::before {
+  content: attr(data-lang);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;                    /* span full width */
+  padding: 8px 72px 8px 12px;  /* more vertical padding; leave room for wider copy button */
+  font-weight: 400;            /* not bold */
+  font-size: 12px;
+  color: #ffffff;               /* white bold text */
+  background: rgba(255, 255, 255, 0.08); /* lighter overlay for contrast */
+  border-top-left-radius: 10px;   /* align with container corners */
+  border-top-right-radius: 10px;
+  line-height: 1.2;
+  pointer-events: none;
+  display: block;
+}
+
+/* Copy button in code header */
+.message.assistant .bubble .code-copy-btn {
+  position: absolute;
+  top: 2px;
+  right: 8px;
+  border: none;
+  background: transparent;
+  color: #999;
+  border-radius: 8px;
+  padding: 2px 8px;
+  cursor: pointer;
+  line-height: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 120ms ease, color 120ms ease;
+  height: 26px;
+  font-size: 12px;
+  gap: 6px; /* space between icon and text */
+  white-space: nowrap;
+  z-index: 1; /* ensure above ::before */
+}
+.message.assistant .bubble .code-copy-btn:hover {
+  color: #bbb;           /* brighten label + icon */
+  background-color: transparent; /* no hover background */
+}
+.message.assistant .bubble .code-copy-btn:active { background-color: transparent; }
+.message.assistant .bubble .code-copy-btn.copied {
+  color: #9fe29f;
+  background-color: transparent; /* no bg change on copied */
+  font-weight: 500; /* subtle emphasis when copied */
+}
+.message.assistant .bubble .code-copy-btn::before {
+  content: "";
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  background-color: currentColor;
+  -webkit-mask-image: var(--copy-icon-url);
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-size: 16px 16px;
+  -webkit-mask-position: center;
+  mask-image: var(--copy-icon-url);
+  mask-repeat: no-repeat;
+  mask-size: 16px 16px;
+  mask-position: center;
+}
+
+.message.assistant .bubble .code-copy-btn.copied::before {
+  -webkit-mask-image: var(--check-icon-url);
+  mask-image: var(--check-icon-url);
+}
+
+/* Ensure inner code element doesn't add extra background/padding */
+.message.assistant .bubble pre code {
+  background: transparent;
+  padding: 0;
+  border: 0;
+  display: block;
+}
+
+/* Inline code (not inside pre) */
+.message.assistant .bubble :not(pre) > code {
+  background: #22252c;
+  color: #e8e8e8;
+  border: 1px solid #2e3340;
+  border-radius: 6px;
+  padding: 0 4px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+    "Liberation Mono", "Courier New", monospace;
+  font-size: 0.95em;
+}
+
+/* Optional: nicer scrollbar for wide code lines */
+.message.assistant .bubble pre::-webkit-scrollbar {
+  height: 10px;
+}
+.message.assistant .bubble pre::-webkit-scrollbar-track {
+  background: #0b0d11;
+}
+.message.assistant .bubble pre::-webkit-scrollbar-thumb {
+  background: #2a2f3a;
+  border-radius: 8px;
+}
+.message.assistant .bubble pre::-webkit-scrollbar-thumb:hover {
+  background: #354052;
+}
+
+.chat-error {
+  color: #ff8c8c;
+  white-space: pre-wrap;
+}
+
+/* Make links readable on dark background inside chat */
+.chat-root a {
+  color: #8ab4f8;                 /* accessible blue on dark */
+  text-decoration: none;          /* remove default underline */
+  border-bottom: 1px solid rgba(138, 180, 248, 0.35); /* subtle underline */
+  text-underline-offset: 2px;
+}
+.chat-root a:hover,
+.chat-root a:focus-visible {
+  color: #c3dafc;
+  border-bottom-color: rgba(138, 180, 248, 0.65);
+  outline: none;                   /* rely on border + color change */
+}
+.chat-root a:active {
+  color: #d7e6ff;
+}
+.chat-root a:visited {
+  color: #9fb7ff;                  /* avoid hard-to-read purple */
+}
+
+.input-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  background-color: #222222; /* closer to page background */
+  border: 1px solid #2e2e2e; /* thin border slightly brighter than area */
+  border-radius: 20px;
+  margin: 12px;
+  padding: 6px;
+  color: #ccc;
+  font-size: inherit;
+  gap: 8px;
+}
+
+.input-bar:focus-within {
+  border-color: #383838; /* subtle highlight when focusing inside */
+}
+
+.input-bar textarea {
+  flex: 1;
+  min-height: 18px;
+  max-height: 120px;
+  resize: vertical;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: #e6e6e6;
+  padding: 6px 12px;
+}
+
+.input-bar textarea::placeholder {
+  color: #aaa;
+}
+
+.input-bar .send {
+  background: #3a85ff;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.input-bar .send:disabled {
+  background: #5a5a5a;
+  color: #aaa;
+  cursor: default;
+}
+
+.icon-plane {
+  width: 18px;
+  height: 18px;
+  display: inline-block;
+  transform: rotate(-35deg);
+  transform-origin: 50% 50%;
+  transition: transform 120ms ease;
+}
+
+.input-bar .send:hover:not(:disabled) .icon-plane {
+  transform: rotate(-45deg) translate(1.5px, -1.5px);
+}
+
+.input-bar .send:active:not(:disabled) .icon-plane {
+  transform: rotate(-45deg) translate(2.5px, -2.5px);
+}
+
+/* Visually hidden, but available to screen readers */
+.visually-hidden {
+  position: absolute !important;
+  height: 1px; width: 1px;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+  white-space: nowrap;
+}
+
+.blink {
+  animation: 1s ease-in-out 1s infinite reverse both running blink;
+}
+
+@keyframes blink {
+  25% { opacity: 0.5; }
+  50% { opacity: 0; }
+  75% { opacity: 0.5; }
+}
+
+[hidden] { display: none; }

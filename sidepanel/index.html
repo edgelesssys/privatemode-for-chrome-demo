@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" type="text/css" href="index.css" />
+</head>
+
+<body>
+  <div class="chat-root">
+    <div id="domain-banner" class="domain-banner" hidden>
+      <button id="page-star-btn" class="domain-star" title="Star page" aria-label="Star page"></button>
+      <span id="domain-text"></span>
+  <button id="new-topic-btn" class="domain-action" title="Start new topic" aria-label="Start new topic"><span class="visually-hidden">New topic</span></button>
+    </div>
+    <div id="response" class="chat-output" hidden></div>
+    <div id="loading" class="chat-output" hidden><span class="blink">...</span></div>
+    <div id="error" class="chat-error" hidden></div>
+  </div>
+
+  <div class="input-bar">
+    <textarea id="input-prompt" placeholder="Type your message..." rows="1"></textarea>
+    <button id="button-send" class="send" disabled aria-label="Send">
+      <svg class="icon-plane" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+        <path d="M2 21 L23 12 L2 3 L2 10 L17 12 L2 14 Z" fill="currentColor" />
+      </svg>
+    </button>
+  </div>
+
+  <script src="../dist/sidepanel.bundle.js" type="module"></script>
+</body>
+
+</html>

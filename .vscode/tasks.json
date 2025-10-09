@@ -1,0 +1,27 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Serve sidepanel (dev)",
+			"type": "shell",
+			"command": "npm",
+			"args": [
+				"run",
+				"dev:sidepanel"
+			],
+			"isBackground": true,
+			"group": "build"
+		},
+		{
+			"label": "Build (rollup)",
+			"type": "shell",
+			"command": "npm",
+			"args": [
+				"run",
+				"build"
+			],
+			"isBackground": false,
+			"group": "build"
+		},
+	]
+}

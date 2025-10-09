@@ -1,0 +1,22 @@
+{
+  "name": "privatemode-for-chrome",
+  "version": "1.0",
+  "scripts": {
+    "build": "rollup -c --environment DEBUG:${npm_config_debug:-false}",
+    "package": "npm run build && mkdir -p build && cp manifest.json background.js build/ && cp -r images sidepanel dist build/",
+    "dev:sidepanel": "node serve-sidepanel.js",
+    "test:sidepanel": "npm run build && node serve-sidepanel.js"
+  },
+  "private": true,
+  "dependencies": {
+  "dompurify": "^3.1.7",
+  "markdown-it": "^14.1.0",
+  "openai": "^4.58.1"
+  },
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^28.0.6",
+    "@rollup/plugin-node-resolve": "^16.0.1",
+    "@rollup/plugin-replace": "^5.0.7",
+    "rollup": "4.22.4"
+  }
+}
