@@ -39,15 +39,15 @@ Under the hood, the extension uses the confidential computing-based AI service [
     npm run build
     ```
 
-3. In Chrome, load this folder as an [unpacked extension](https://developer.chrome.com/docs/extensions/mv3/getstarted/development-basics/#load-unpacked).
-4. Ensure your local Privatemode endpoint is running on <http://localhost:8080>.
+3. Open the extensions page in Chrome (`chrome://extensions`) and enable *Developer mode* by clicking the toggle in the top right corner.  
+4. Load this folder as [unpacked extension](https://developer.chrome.com/docs/extensions/mv3/getstarted/development-basics/#load-unpacked).
 5. Click the extension icon and use the side panel to send prompts.
 
 🎉 Congratulations. You now have a privacy-preserving chat assistant in your browser.
 
 ## 🛠️ Development
 
-Want to work on the code of the extension? Great! For the best experience, enable "developer mode" for the extension in `chrome://extensions/`.
+Want to work on the code of the extension? Great! 
 
 When making changes to the code, building and reloading the extension (close + open) is sufficient to apply the changes to a running extension. See below for running the extension as a website for more interactive debugging.
 
