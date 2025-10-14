@@ -33,7 +33,7 @@ Under the hood, the extension uses the confidential computing-based AI service [
     npm install
     ```
 
-2. Build the side panel bundle:
+2. Build the extension:
 
     ```sh
     npm run build
