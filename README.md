@@ -1,87 +1,57 @@
 # Privatemode AI Chrome Extension (Experimental)
 
-> **⚠️ EXPERIMENTAL - NOT FOR PRODUCTION USE**
+> **⚠️ Experimental - not for production use**
 >
-> This Chrome extension is an **experimental proof-of-concept** designed to validate the feasibility of confidential AI assistance in the browser. It is **not production-ready** and should be used for exploration and demonstration purposes only.
+> This Chrome extension is an experimental proof-of-concept designed to validate the feasibility of a confidential AI assistant in the browser. 
 >
-> **What to expect:**
+> What to expect:
 > - Bugs and limited functionality
 > - No guarantees on maintenance or support
-> - May be modified or removed at any time
-> - Local storage is not production-grade: Browsing history stored locally without encryption
->
-> **This is a vision piece** to show what's possible with privacy-preserving AI in the browser - not something you should depend on for real-world use.
->
-> **Note:** The Privatemode proxy itself provides confidential AI communication as designed - the experimental nature applies to this extension's implementation.
+> - Browsing history is stored locally without encryption
 
-The [Privatemode](https://www.privatemode.ai) Chrome extension demonstrates a confidential AI assistant within your browser. It reads the current page and can answer questions about it using a local Privatemode endpoint (<http://localhost:8080>). It keeps communication with AI confidential, showcasing the potential for privacy-preserving AI assistance in the browser that works with sensitive documents, websites, etc. As it remembers the pages you browsed, it can also answer questions about past visits.
+The Privatemode Chrome extension provides a confidential AI assistant within your browser. It reads the current page and browsing history and can answer questions about it. It keeps all communication with AI confidential, ensuring privacy for sensitive documents, websites, etc. 
 
-## Overview
+Under the hood, the extension uses the confidential computing-based AI service [Privatemode](https://www.privatemode.ai/).
 
-This experimental extension demonstrates how to capture current page content, send it along with your question and RAG context of previous conversations via a local Privatemode proxy endpoint (OpenAI `chat/completions` compatible), and display grounded answers in a chat UI.
+## 🚀 Getting started
 
-### Limitations & Known Issues
+### Prerequisites
 
-- **Local storage security**: Browse history is stored in the local file system without encryption or production-grade protection
-- **Extension implementation**: Minimal quality assurance and security review of the extension code
-- **No support**: No committed maintenance schedule or bug fixes
-- **Breaking changes**: May change or break without notice
+1. Create a free [Privatemode account](https://portal.privatemode.ai/sign-in/create). 
 
-**Note:** While the extension is experimental, it demonstrates real confidential AI communication - the Privatemode proxy encrypts all prompts and responses as designed.
+2. Run the following software locally: 
 
-## Requirements
+    - 🔒 [Privatemode Proxy](https://docs.privatemode.ai/guides/proxy-configuration) running on <http://localhost:8080>. Make sure to enable [prompt caching](https://docs.privatemode.ai/guides/proxy-configuration#prompt-caching) in the proxy to reduce latency and token consumption. The Privatemode Proxy verifies the integrity of the Privatemode AI backend using remote attestation and encrypts your data before sending it to the backend.  
+    - 📚 [Privatemode Document Store](https://github.com/edgelesssys/privatemode-document-store-demo) running on <http://localhost:8081> for document storage and retrieval.
 
-- [Privatemode proxy](https://docs.privatemode.ai/guides/proxy-configuration) running on <http://localhost:8080> (default) or other host/port as configured. Make sure to enable [prompt caching](https://docs.privatemode.ai/guides/proxy-configuration#prompt-caching) in the proxy to reduce latency and cost.
-- [Privatemode Document Store](https://github.com/edgelesssys/privatemode-document-store-demo) running on <http://localhost:8081> for document storage and retrieval.
+### Build and install the extension
 
-## 🔒 About the Privatemode Proxy
 
-This extension requires the [Privatemode proxy](https://docs.privatemode.ai/quickstart) to be running locally or on a trusted host. With Privatemode, your data and prompts are encrypted during processing and cannot be accessed by anyone but you nor can it be used for model training.
+1. Install dependencies:
 
-The Privatemode proxy is a lightweight service that does the following:
+    ```sh
+    npm install
+    ```
 
-- It encrypts data sent to Privatemode and decrypts all data received.
-- It verifies the integrity of the Privatemode backend.
-- It exposes an OpenAI-compatible API endpoint for AI inference.
+2. Build the extension:
 
-Run it via Docker:
+    ```sh
+    npm run build
+    ```
 
-```bash
-docker run -p 8080:8080 \
-  ghcr.io/edgelesssys/privatemode/privatemode-proxy:latest \
-  --apiKey <your-api-key>
-```
+3. Open the extensions page in Chrome (`chrome://extensions`) and enable *Developer mode* by clicking the toggle in the top right corner.  
+4. Load this folder as [unpacked extension](https://developer.chrome.com/docs/extensions/mv3/getstarted/development-basics/#load-unpacked).
+5. Click the extension icon and use the side panel to send prompts.
 
-You can get started for free with a [Privatemode API key](https://www.privatemode.ai/pricing).
+🎉 Congratulations. You now have a privacy-preserving chat assistant in your browser.
 
-Learn more about Privatemode and the proxy in the [docs](https://docs.privatemode.ai/quickstart).
+## 🛠️ Development
 
-## Development
-
-```bash
-npm install
-npm run build [ --debug ]
-```
-
-Install in Chrome via `chrome://extensions/`:
-
-- enabled developer mode
-- install via `Load unpacked` and select the repo directory
+Want to work on the code of the extension? Great! 
 
 When making changes to the code, building and reloading the extension (close + open) is sufficient to apply the changes to a running extension. See below for running the extension as a website for more interactive debugging.
 
-## Security
-
-⚠️ **Experimental security implementation** - not suitable for production use:
-
-- ✅ Bind: 127.0.0.1 only.
-- ✅ Auth: only one instance of the chrome extension allowed by authenticating on first use; blocking others.
-- ⚠️ **No guarantee of local data at rest protection**: Stored content is not encrypted or securely protected.
-- ⚠️ **No security audit**: This implementation has not undergone security review.
-
-When updating the extension, the authentication key stored in the document storage service has to be reset to allow the new extension to connect.
-
-## Build-time configuration
+### Build-time configuration
 
 By default, `PRIVATEMODE_BASE_URL` is `http://localhost:8080` and `PRIVATEMODE_API_KEY` is `NONE`. If your proxy is started with an API key and does not require a client-provided key, you can leave `PRIVATEMODE_API_KEY` as `NONE`.
 
@@ -91,36 +61,7 @@ You can configure the Privatemode endpoint and API key at build time using envir
 PRIVATEMODE_BASE_URL="http://localhost:8080" PRIVATEMODE_API_KEY="sk-your-key" npm run build
 ```
 
-## Run
-
-1. Install dependencies:
-
-    ```sh
-    npm install
-    ```
-
-2. Build the side panel bundle:
-
-    ```sh
-    npm run build
-    ```
-
-3. In Chrome, load this folder as an [unpacked extension](https://developer.chrome.com/docs/extensions/mv3/getstarted/development-basics/#load-unpacked).
-4. Ensure your local Privatemode endpoint is running on <http://localhost:8080>.
-5. Click the extension icon and use the side panel to send prompts.
-
-### Usage
-
-1. Open any web page you want to query.
-2. Open the side panel via the extension icon.
-3. Ask a question about the page; the chat will use the page’s content as context.
-
-## Notes
-
-- Default API key is `NONE`. If your proxy requires a specific key, set `PRIVATEMODE_API_KEY` at build time as described above.
-- Manifest includes host permissions for `http://localhost:8080/*` so the extension can reach your local Privatemode instance.
-
-## Test server (run the side panel as a website)
+### Test server (run the side panel as a website)
 
 For quick iteration without loading the Chrome extension, you can serve the side panel as a regular web page.
 
@@ -151,3 +92,16 @@ All-in-one (build + serve):
 ```sh
 npm run test:sidepanel
 ```
+
+## 📝 Notes
+
+* When updating the extension, the authentication key stored in the document storage service has to be reset to allow the new extension to connect.
+* Manifest includes host permissions for `http://localhost:8080/*` so the extension can reach your local Privatemode instance.
+When updating the extension, the authentication key stored in the document storage service has to be reset to allow the new extension to connect.
+
+## ⚠️ Limitations & known issues
+
+- **Local storage security**: Browse history is stored in the local file system without encryption or production-grade protection
+- **Extension implementation**: Minimal quality assurance and security review of the extension code
+- **No support**: No committed maintenance schedule or bug fixes
+- **Breaking changes**: May change or break without notice
