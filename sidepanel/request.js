@@ -110,9 +110,11 @@ export async function buildRequestMessages(chat) {
     let historyContentStr = '';
     if (Array.isArray(history) && history.length) {
         historyContentStr = history.map(entry => {
-            const title = entry.title || 'Untitled';
-            const url = entry.url || entry.metadata?.url || '';
-            const content = entry.content || '';
+            const title = "## Page: " + (entry.title || 'Untitled');
+
+            // Indent page content for clarity
+            const url = "  " + entry.url || entry.metadata?.url || '';
+            const content = (entry.content || '').split('\n').map(line => '    ' + line).join('\n');
             return `${title}\n${url}\n\n${content}`;
         }).join('\n\n');
     }
@@ -120,7 +122,8 @@ export async function buildRequestMessages(chat) {
     const [browseHistoryMd, browseHistoryLinks] = browserHistoryToMarkdown(historyOverview)
 
     // prepend browse history (if any) to the retrieval context
-    const combinedCtx = browseHistoryMd + historyContentStr;
+    const historyContentMessage = historyContentStr ? "Content from recently visited pages:\n" + historyContentStr : ""
+    const combinedCtx = browseHistoryMd + historyContentMessage;
 
     if (combinedCtx) {
         const msg = 'Here is context from other visited pages:\n\n';
