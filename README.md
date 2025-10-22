@@ -13,6 +13,8 @@ The Privatemode Chrome extension provides a confidential AI assistant within you
 
 Under the hood, the extension uses the confidential computing-based AI service [Privatemode](https://www.privatemode.ai/).
 
+👉 Learn more in this [blog post](https://www.privatemode.ai/articles/browser-extension-demo-launch). 
+
 ## 🚀 Getting started
 
 ### Prerequisites
